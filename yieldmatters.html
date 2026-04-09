@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yield Calculator – Plastic Partnership Ghana</title>
+<meta name="description" content="Compare the true cost of PET bales by yield. Calculate equivalent cost per tonne between your current supplier and Plastic Partnership.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html"><img src="images/logo.png" alt="Plastic Partnership"></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="plasticlifecycle.html">The Problem</a></li>
+      <li><a href="jointhefight.html">Earn Money</a></li>
+      <li><a href="about-us.html">About Us</a></li>
+      <li><a href="our-products.html">Our Products</a></li>
+      <li><a href="our-story.html">Our Story</a></li>
+      <li><a href="letsconnect.html" class="nav-cta">Contact</a></li>
+    </ul>
+    <div class="nav-burger" id="navBurger"><span></span><span></span><span></span></div>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html">Home</a>
+    <a href="plasticlifecycle.html">The Problem</a>
+    <a href="jointhefight.html">Earn Money</a>
+    <a href="about-us.html">About Us</a>
+    <a href="our-products.html">Our Products</a>
+    <a href="our-story.html">Our Story</a>
+    <a href="timeline.html">Timeline</a>
+    <a href="suppliers.html">Our Supply Chain</a>
+    <a href="advisoryboard.html">Advisory Board</a>
+    <a href="letsconnect.html">Contact</a>
+  </div>
+</nav>
+
+<section class="hero hero-small" style="background-image:url('images/recycling-plant.jpg')">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="tag">Smart Buying</div>
+    <h1>Buy by Yield, Not by Cost</h1>
+    <p>Work smarter — not harder — by factoring in yield and equivalent cost to your buying decisions.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:860px;">
+    <div class="tag">Why It Matters</div>
+    <h2 class="section-title">Yield to Cost Calculators</h2>
+    <p style="color:var(--muted);line-height:1.8;margin-bottom:24px;">Hundreds of studies have concluded that when manufacturers buy solely on cost it always results in negative unintended outcomes. At Plastic Partnership we understand why some manufacturers focus on cost, especially when dealing with mixed material from curbside schemes and landfills.</p>
+    <p style="color:var(--muted);line-height:1.8;margin-bottom:40px;">At Plastic Partnership our collection network intercepts 100% of our post consumer PET bottles at source, from the environment, before it reaches a landfill. We offer our customers a guarantee that the target material (PET composition) yield they receive from our bales is a <strong>minimum of 95%</strong>.</p>
+
+    <!-- CALCULATOR -->
+    <div class="calc-box">
+      <h3 style="font-size:1.3rem;color:var(--green);margin-bottom:28px;">Equivalent Cost Calculator</h3>
+      <div class="calc-grid">
+        <div>
+          <h4 style="color:var(--muted);font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px;">Plastic Partnership Bales</h4>
+          <div class="form-group">
+            <label for="costA">Our Price ($ per tonne)</label>
+            <input type="number" id="costA" placeholder="e.g. 420" min="0" step="1" oninput="calcYield()">
+          </div>
+          <div class="form-group">
+            <label for="yieldA">Our Yield % (default 95)</label>
+            <input type="number" id="yieldA" value="95" min="1" max="100" step="0.1" oninput="calcYield()">
+          </div>
+        </div>
+        <div>
+          <h4 style="color:var(--muted);font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px;">Your Current Supplier</h4>
+          <div class="form-group">
+            <label for="costB">Their Price ($ per tonne)</label>
+            <input type="number" id="costB" placeholder="e.g. 360" min="0" step="1" oninput="calcYield()">
+          </div>
+          <div class="form-group">
+            <label for="yieldB">Their Yield %</label>
+            <input type="number" id="yieldB" value="75" min="1" max="100" step="0.1" oninput="calcYield()">
+          </div>
+        </div>
+      </div>
+      <div class="calc-result" id="calcResult" style="display:none;">
+        <div class="calc-grid">
+          <div>
+            <div style="font-size:.85rem;color:var(--muted);margin-bottom:4px;">PP Effective Cost / Tonne</div>
+            <div class="result-val" id="calcEffA">—</div>
+          </div>
+          <div>
+            <div style="font-size:.85rem;color:var(--muted);margin-bottom:4px;">Current Effective Cost / Tonne</div>
+            <div class="result-val" id="calcEffB">—</div>
+          </div>
+        </div>
+        <div class="calc-verdict text-green" id="calcSaving"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="text-center" style="max-width:700px;margin:0 auto 52px;">
+      <div class="tag">The Cost of Cutting Corners</div>
+      <h2 class="section-title">Why Buying Solely on Cost Costs More</h2>
+    </div>
+    <div class="grid-auto">
+      <div class="card">
+        <div class="card-icon">📉</div>
+        <h3>Lower Quality Products</h3>
+        <p>Cheaper materials lead to compromised product quality, customer complaints, returns, and a damaged reputation.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔧</div>
+        <h3>Higher Defect Rates</h3>
+        <p>Cheaper materials are more prone to failure — increasing costs through rework, repairs, and returns.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⏱️</div>
+        <h3>Production Downtime</h3>
+        <p>Lower quality inputs lead to increased production downtime — missed deadlines, delayed shipments, and lost revenue.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">😞</div>
+        <h3>Reduced Customer Satisfaction</h3>
+        <p>When cost is prioritised over quality, the end customer suffers — leading to negative reviews and decreased loyalty.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--green3);">
+  <div class="container text-center">
+    <h2 class="section-title" style="max-width:600px;margin:0 auto 16px;">Ready to Place a Trial Order?</h2>
+    <p style="max-width:520px;margin:0 auto 32px;color:var(--muted);">If the calculator shows we're more effective, consider placing a trial order with us.</p>
+    <div class="btn-group" style="justify-content:center;">
+      <a href="letsconnect.html" class="btn btn-green">Get in Touch</a>
+      <a href="suppliers.html" class="btn btn-outline" style="color:var(--green);border-color:var(--green);">Our Supply Chain</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="Plastic Partnership">
+        <p>Helping to improve the lives of West Africans by recycling post consumer plastic.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about-us.html">About Us</a>
+        <a href="our-story.html">Our Story</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="advisoryboard.html">Advisory Board</a>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <a href="our-products.html">Our Products</a>
+        <a href="suppliers.html">Our Supply Chain</a>
+        <a href="yieldmatters.html">Yield Calculator</a>
+        <a href="introduction.html">Introduction</a>
+      </div>
+      <div class="footer-col">
+        <h4>Community</h4>
+        <a href="jointhefight.html">Earn Money</a>
+        <a href="plasticlifecycle.html">The Problem</a>
+        <a href="competition.html">Bag Competition</a>
+        <a href="letsconnect.html">Contact Us</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Plastic Partnership Ltd. All rights reserved.</span>
+      <span>Tema, Ghana, West Africa</span>
+    </div>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>
